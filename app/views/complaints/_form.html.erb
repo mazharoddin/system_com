@@ -1,0 +1,47 @@
+<%= form_for(complaint) do |f| %>
+  <% if complaint.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(complaint.errors.count, "error") %> prohibited this complaint from being saved:</h2>
+
+      <ul>
+      <% complaint.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :date %>
+    <%= f.date_select :date %>
+  </div>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :section %>
+    <%= f.text_field :section %>
+  </div>
+
+  <div class="field">
+    <%= f.label :created %>
+    <%= f.time_select :created %>
+  </div>
+
+  <div class="field">
+    <%= f.label :status %>
+    <%= f.text_field :status %>
+  </div>
+
+  <div class="field">
+    <%= f.label :user_id %>
+    <%= f.text_field :user_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
