@@ -6,7 +6,6 @@ class CreateComplaints < ActiveRecord::Migration[5.0]
       t.string :section
       t.time :created
       t.string :status
-      t.belongs_to :user, foreign_key: true
 
       t.timestamps
     end
